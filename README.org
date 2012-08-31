@@ -1,0 +1,25 @@
+* Usage
+
+  - =google-url GOOGLE-URL= :: Extract the URL from =GOOGLE-URL=.
+  - =google-url= :: Extract the URL from stdin.
+
+* Purpose
+
+  =google-url= is a trivial script to extract URLs from Google-URLs.
+
+  Google URLs look something like:
+
+  #+BEGIN_QUOTE
+  [[http://www.google.com/url?sa%3Dt&rct%3Dj&q%3Dfoo&source%3Dweb&cd%3D1&ved%3D0CDIQFjAA&url%3Dhttp%253A%252F%252Fen.wikipedia.org%252Fwiki%252FFoobar&ei%3DgBj9TtDpAcXT8QPI_4GdAQ&usg%3DAFQjCNH1J2pXAETcCKA7T6svhOKIRNyojg][http://www.google.com/url?sa=t&rct=j&q=foo&source=web&cd=1&ved=0CDIQFjAA&url=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFoobar&ei=gBj9TtDpAcXT8QPI_4GdAQ&usg=AFQjCNH1J2pXAETcCKA7T6svhOKIRNyojg]]
+  #+END_QUOTE
+
+  when what we want is really:
+
+  #+BEGIN_QUOTE
+  [[http://en.wikipedia.org/wiki/Foobar]]
+  #+END_QUOTE
+
+* Requirements
+
+  - [[http://tidy.sourceforge.net/][HTML Tidy]]
+  - [[http://xmlstar.sourceforge.net/][XMLStarlet]]
