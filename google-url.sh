@@ -15,13 +15,13 @@ function curl-or-cat() {
 }
 
 function to-xml() {
-    tidy -asxml -numeric -q --show-warnings no | xml fo
+    tidy -asxml -numeric -q --show-warnings no | xmlstarlet fo
 }
 
 function find-redirect() {
     NAMESPACE="http://www.w3.org/1999/xhtml"
 
-    xml sel -N x=$NAMESPACE -t \
+    xmlstarlet sel -N x=$NAMESPACE -t \
         -m "//x:meta[@http-equiv='refresh']" \
         -v "@content"
 }
